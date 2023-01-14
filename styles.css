@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --dark-gray-blue: hsl(217, 19%, 35%);
+  --dark-black-blue: hsl(219, 29%, 14%);
+}
+
+/* CSS Reset: https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,h1,h2,h3,h4,p,figure,blockquote,dl,dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  background-color: rgb(240, 253, 253);
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 0.8125rem;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,button,textarea,select {
+  font: inherit;
+}
+
+
+/* 
+================
+====MAIN CSS====
+================
+*/
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0em;
+  gap: 2em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  color: white;
+  background-color: black;
+  margin: 0em 2em;
+  padding: 2em;
+  border-radius: 15px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.pfp {
+  border-radius: 50px;
+  margin-right: 1em;
+}
+
+/*
+=================
+===CARD COLORS===
+=================
+*/
+
+.card-1 {
+  background-color: var(--violet);
+}
+
+.card-2 {
+  background-color: var(--dark-gray-blue);
+}
+
+.card-3 {
+  color: black;
+  background-color: white;
+
+  box-shadow: 121px 88px 77px -62px rgba(0,0,0,0.09);
+  -webkit-box-shadow: 121px 88px 77px -62px rgba(0,0,0,0.09);
+  -moz-box-shadow: 121px 88px 77px -62px rgba(0,0,0,0.09);
+}
+
+.card-4 {
+  background-color: var(--dark-black-blue);
+}
+
+.card-5 {
+  color: black;
+  background-color: white;
+
+  box-shadow: 49px 55px 77px -62px rgba(0,0,0,0.18);
+  -webkit-box-shadow: 49px 55px 77px -62px rgba(0,0,0,0.18);
+  -moz-box-shadow: 49px 55px 77px -62px rgba(0,0,0,0.18);
+}
+
+/*
+================
+=HELPER CLASSES=
+================
+*/
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.gray-text {
+  color: var(--dark-gray-blue);
+}
+
+.gray-opac-5 {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.gray-opac-7 {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pfp-opac {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.pfp-gray {
+  border: 1px solid var(--dark-gray-blue);
+}
+
+/*
+===============
+=MEDIA QUERIES=
+===============
+*/
+
+@media only screen and (min-width:1440px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+  }
+
+  .card-group {
+    display: grid;
+    margin: 0em 8em;
+    gap: 2em;
+    grid-template-areas: 
+    'card1 card1 card2 card3'
+    'card5 card4 card4 card3';
+  }
+
+  .card {
+    margin: 0em 0em;
+  }
+
+  .card > .content > p {
+    font-size: 1rem;
+    line-height: 1.5em;
+  }
+
+  .card-1 {
+    grid-area: card1;
+  }
+
+  .card-2 {
+    grid-area: card2;
+  }
+
+  .card-3 {
+    grid-area: card3;
+  }
+
+  .card-4 {
+    grid-area: card4;
+  }
+
+  .card-5 {
+    grid-area: card5;
+  }
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+     scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
