@@ -100,6 +100,9 @@ input,button,textarea,select {
 
 .card-1 {
   background-color: var(--violet);
+  background-image: url("imgs/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position-x: 90%;
 }
 
 .card-2 {
